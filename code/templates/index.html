@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>MOSQUITO PREDICTION</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="{{url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="{{url_for('static', filename='css/mdb.min.css')}}" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="{{url_for('static', filename='css/style.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='css/common.css')}}" rel="stylesheet">
+  <style>
+  @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap");
+</style>
+
+  <style type="text/css">
+    html,
+    body,
+    header,
+    .carousel {
+      height: 60vh;
+    }
+
+    @media (max-width: 740px) {
+
+      html,
+      body,
+      header,
+      .carousel {
+        height: 100vh;
+      }
+    }
+
+    @media (min-width: 800px) and (max-width: 850px) {
+
+      html,
+      body,
+      header,
+      .carousel {
+        height: 100vh;
+      }
+    }
+
+    @media (min-width: 800px) and (max-width: 850px) {
+      .navbar:not(.top-nav-collapse) {
+        background: #929FBA !imporstant;
+      }
+    }
+
+
+  </style>
+</head>
+
+<body>
+
+  <header>
+
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+      <div class="container">
+
+        <!-- Brand -->
+        <a class="navbar-brand" href="#" target="_blank">
+          <strong class="hangul">세영조</strong>
+        </a>
+
+        <!-- Collapse -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <!-- Left -->
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">HOME
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+          </ul>
+
+          <!-- Right -->
+          <ul class="navbar-nav nav-flex-icons">
+            <li class="nav-item">
+              <a href="https://www.scnu.ac.kr/SCNU/main.do?sso=ok" class="nav-link border border-light rounded"
+                target="_blank">
+                <i class="fab fa-github mr-2"></i>SCNU
+              </a>
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
+    </nav>
+    <!-- Navbar -->
+
+    <!--Carousel Wrapper-->
+    <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
+
+      <!--Indicators-->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-1z" data-slide-to="1"></li>
+        <li data-target="#carousel-example-1z" data-slide-to="2"></li>
+      </ol>
+      <!--/.Indicators-->
+
+      <!--Slides-->
+      <div class="carousel-inner" role="listbox">
+
+        <!--First slide-->
+        <div class="carousel-item active">
+          <div class="view" style="background-image: url('https://images.unsplash.com/photo-1572262086204-3909bfc93ea0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80'); background-repeat: no-repeat; background-size: cover; background-position:10%;">
+
+            <!-- Mask & flexbox options-->
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+              <!-- Content -->
+              <div class="text-center white-text mx-5 wow fadeIn">
+                <h1 class="mb-4">
+                  <strong>모기 개체 수 예측</strong>
+                </h1>
+
+                <p>
+                  <strong>세영조</strong>
+                </p>
+
+                <p class="mb-4 d-none d-md-block">
+                  <strong>지구 온난화가 진행됨에 따른 기온 상승 및 강수량 증가 등의 현상으로 인해 <br>모기 개체 수가 증가하여 말라리아, 일본뇌염, 뎅기열 등 모기를 매개체로 하는 질병의 감염률이 높아지고 있으므로<br> 이를 예방하기 위해 모기 개체 수를 예측하고자 한다.</strong>
+                </p>
+
+                <a target="_self" href="#Prediction" class="btn btn-outline-white btn-lg">Start prediction
+                  <i class="fas fa-graduation-cap ml-2"></i>
+                </a>
+              </div>
+              <!-- Content -->
+
+            </div>
+            <!-- Mask & flexbox options-->
+
+          </div>
+        </div>
+        <!--/First slide-->
+
+        <!--Second slide-->
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://images.unsplash.com/photo-1436385500509-2d139f5d668e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1056&q=80'); background-repeat: no-repeat; background-size: cover; background-position:30%;">
+
+            <!-- Mask & flexbox options-->
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+              <!-- Content -->
+              <div class="text-center white-text mx-5 wow fadeIn">
+                <h1 class="mb-4">
+                  <strong>모기 개체 수 예측</strong>
+                </h1>
+
+                <p>
+                  <strong>세영조</strong>
+                </p>
+
+                <p class="mb-4 d-none d-md-block">
+                  <strong>지구 온난화가 진행됨에 따른 기온 상승 및 강수량 증가 등의 현상으로 인해 <br>모기 개체 수가 증가하여 말라리아, 일본뇌염, 뎅기열 등 모기를 매개체로 하는 질병의 감염률이 높아지고 있으므로<br> 이를 예방하기 위해 모기 개체 수를 예측하고자 한다.</strong>
+                </p>
+
+                <a target="_self" href="#Prediction" class="btn btn-outline-white btn-lg">Start prediction
+                  <i class="fas fa-graduation-cap ml-2"></i>
+                </a>
+              </div>
+              <!-- Content -->
+
+            </div>
+            <!-- Mask & flexbox options-->
+
+          </div>
+        </div>
+        <!--/Second slide-->
+
+        <!--Third slide-->
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://images.unsplash.com/photo-1564959049479-5654b6521a5d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'); background-repeat: no-repeat; background-size: cover; background-position:30%;">
+
+            <!-- Mask & flexbox options-->
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+              <!-- Content -->
+              <div class="text-center white-text mx-5 wow fadeIn">
+                <h1 class="mb-4">
+                  <strong>모기 개체 수 예측</strong>
+                </h1>
+
+                <p>
+                  <strong>세영조</strong>
+                </p>
+
+                <p class="mb-4 d-none d-md-block">
+                  <strong>지구 온난화가 진행됨에 따른 기온 상승 및 강수량 증가 등의 현상으로 인해 <br>모기 개체 수가 증가하여 말라리아, 일본뇌염, 뎅기열 등 모기를 매개체로 하는 질병의 감염률이 높아지고 있으므로<br> 이를 예방하기 위해 모기 개체 수를 예측하고자 한다.</strong>
+                </p>
+
+                <a target="_self" href="#Prediction" class="btn btn-outline-white btn-lg">Start prediction
+                  <i class="fas fa-graduation-cap ml-2"></i>
+                </a>
+              </div>
+              <!-- Content -->
+
+            </div>
+            <!-- Mask & flexbox options-->
+
+          </div>
+        </div>
+        <!--/Third slide-->
+
+      </div>
+      <!--/.Slides-->
+
+      <!--Controls-->
+      <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+      <!--/.Controls-->
+
+    </div>
+    <!--/.Carousel Wrapper-->
+
+  </header>
+
+  <!--Main layout-->
+  <main>
+    <div class="container">
+
+      <!--Section: 첫번째 main-->
+      <section class="mt-5 wow fadeIn">
+
+        <!--Grid row-->
+        <div class="row">
+
+          <!--Grid column-->
+          <div class="col-md-6 mb-4">
+
+            <img src="https://file.mk.co.kr/meet/neds/2016/06/image_readtop_2016_400416_14649364802495767.jpg" class="img-fluid z-depth-1-half"
+              alt="모기에 의한 사망률">
+
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-md-6 mb-4">
+
+            <!-- 1번 큰 제목 -->
+            <h3 class="h3 mb-3">About the Project</h3>
+            <p><strong>기후 데이터를 활용한 모기출현등급 예측</strong></p>
+            <p>모기를 매개체로 한 감염병을 예방하기 위하여 모기 개체 수를 예측하는 모델을 개발하였습니다.</p>
+            <!-- 1번 내용 -->
+            <hr>
+            <p><strong>활용방안 및 기대효과</strong></p>
+            <p>학습을 통해 추출된 모기 개체 수를 기반으로 상황에 맞는 행동수칙 및 방제법을 제공할 수 있고, 등급이 높은 구역을 집중적으로 방역할 수 있어 모기 개체 수 감소에 큰 효과를 기대할 수 있습니다.</p>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </section>
+      <!--Section: 두번째 main-->
+
+      <hr class="my-5">
+
+      <!--Section: Main features & Quick Start-->
+      <section>
+
+        <h3 class="h3 text-center mb-5">Machine Learning</h3>
+
+        <!--Grid row-->
+        <div class="row wow fadeIn">
+
+          <!--Grid column-->
+          <div class="col-lg-6 col-md-12 px-4">
+
+            <!--First row-->
+            <div class="row">
+              <div class="col-1 mr-3">
+                <i class="fas fa-book fa-2x blue-text"></i>
+              </div>
+              <div class="col-10">
+                <h5 class="feature-title">머신러닝이란?</h5>
+                <p class="grey-text">인공지능(AI)의 한분야 <br> 사람이 학습하듯이 컴퓨터에도 데이터들을 제공하여 학습하게 함으로써 새로운 지식을 창출하는 분야</p>
+              </div>
+            </div>
+            <!--/First row-->
+
+            <div style="height:30px"></div>
+
+            <!--Second row-->
+            <div class="row">
+              <div class="col-1 mr-3">
+                <i class="fas fa-graduation-cap fa-2x cyan-text"></i>
+              </div>
+              <div class="col-10">
+                <h5 class="feature-title">머신러닝 활용 분야</h5>
+                <p class="grey-text">컴퓨터시각(문자 인식, 물체 인식, 얼굴 인식) <br> 자연어 처리(자동 번역, 대화 분석)<br>음성 인식 및 필기 인식<br>정보 검색 및 검색 엔진(스팸 필터, 추출 및 요약, 추천 시스템 )<br> 생물 정보학(유전자 분석, 단백질 분류, 질병 진단)<br> 컴퓨터 그래픽 및 게임(애니메이션, 가상현실) 등 
+                </p>
+              </div>
+            </div>
+            <!--/Second row-->
+          </div>
+          <!--/Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-6 col-md-12">
+
+            <p class="h5 text-center mb-4">머신러닝에 대한 아주 쉬운 설명 by Terry<br>유튜브 ART Lab for AI & Robotics Tech 채널</p>
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/mqaATsYP6j0" allowfullscreen></iframe>
+            </div>
+          </div>
+          <!--/Grid column-->
+
+        </div>
+        <!--/Grid row-->
+
+      </section>
+      <!--Section: Main features & Quick Start-->
+
+      <hr class="my-5">
+
+      <!--Section: Not enough-->
+      <section>
+
+        <h2 class="my-5 h3 text-center">Column</h2>
+
+        <!--First row-->
+        <div class="row features-small mb-5 mt-3 wow fadeIn">
+
+          <!--First column-->
+          <div class="col-md-4">
+            <!--First row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-check-circle fa-2x indigo-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">Month / Day</h6>
+                <p class="grey-text">월/일
+                </p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/First row-->
+
+            <!--Second row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-check-circle fa-2x indigo-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">Temp / Htemp / Ltemp / Dcross</h6>
+                <p class="grey-text">평균기온(°c) / 최고기온(°c) / 최저기온(°c) / 일교차(°c)
+                </p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/Second row-->
+
+            <!--Third row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-check-circle fa-2x indigo-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">Rain</h6>
+                <p class="grey-text">강수량(mm) </p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/Third row-->
+
+            <!--Fourth row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-check-circle fa-2x indigo-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">Wind </h6>
+                <p class="grey-text">풍속(m/s)</p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/Fourth row-->
+          </div>
+          <!--/First column-->
+
+          <!--Second column-->
+          <div class="col-md-4 flex-center">
+            <img src="https://postfiles.pstatic.net/MjAyMDExMDZfMjQg/MDAxNjA0NjU3NjE3ODc2.xwrxOtlVTpMXIqhqH2hRQmfbfoo_2JZS8qmSu_mDfqYg.9v5ozXZWXb0iwCC6WTOxDlny9t6iiIfRN0TD--92I8gg.PNG.042707/%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C.png?type=w773" alt="상관관계"
+              class="z-depth-0 img-fluid">
+          </div>
+          <!--/Second column-->
+
+          <!--Third column-->
+          <div class="col-md-4 mt-2">
+            <!--First row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-check-circle fa-2x indigo-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">Humi</h6>
+                <p class="grey-text">습도(%)
+                </p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/First row-->
+
+            <!--Second row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-check-circle fa-2x indigo-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">Cloud</h6>
+                <p class="grey-text">전운량(1/10)</p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/Second row-->
+
+            <!--Third row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-check-circle fa-2x indigo-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">Sunlight</h6>
+                <p class="grey-text">일조시간(h) 
+                </p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/Third row-->
+
+            <!--Fourth row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-check-circle fa-2x indigo-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">Sunset</h6>
+                <p class="grey-text">일몰시간</p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/Fourth row-->
+          </div>
+          <!--/Third column-->
+
+        </div>
+        <!--/First row-->
+
+      </section>
+      <!--Section: Not enough-->
+
+      <hr class="mb-5">
+
+      <!--Section: More-->
+      <section id="Prediction">
+
+        <h3 class="h3 text-center mb-5" >Prediction</h3>
+
+        <!--Grid row-->
+        <div class="Predictio_form_wrap">
+        <div class="wow fadeIn">
+
+          <!--Grid column-->
+          <div class="">
+
+            <form action="/" method="post">
+              <!-- Default form group -->
+                <div class="row">
+                  <div class="col-6">
+                  <div class="form-group">
+                      <label  for="formGroupExampleInput">월</label>
+                      <input  type="number" name="month_input" max = "12" class="form-control" id="formGroupExampleInput" placeholder="숫자만 입력하세요. (ex : 1 2 3 4 )"required>
+                  </div>
+                  <!-- Default input -->
+                  <div class="form-group">
+                      <label for="formGroupExampleInput">일</label>
+                      <input type="number" name="day_input" max = "31" class="form-control" id="formGroupExampleInput" placeholder="숫자만 입력하세요. (ex : 1 2 3 4 )"required>
+                  </div>
+                  <!-- Default input -->
+                  <div class="form-group">
+                      <label for="formGroupExampleInput">평균 온도</label>
+                      <input type="text" name="temp_input" class="form-control" id="formGroupExampleInput" placeholder="소수점 첫번째 자리까지 입력하세요."required>
+                  </div>
+                  <!-- Default input -->
+                  <div class="form-group">
+                      <label for="formGroupExampleInput">최고 온도</label>
+                      <input type="text" name="htemp_input" class="form-control" id="formGroupExampleInput" placeholder="소수점 첫번째 자리까지 입력하세요."required>
+                  </div>
+                  <!-- Default input -->
+                  <div class="form-group">
+                      <label for="formGroupExampleInput">최저 온도</label>
+                      <input type="text" name="ltemp_input" class="form-control" id="formGroupExampleInput" placeholder="소수점 첫번째 자리까지 입력하세요."required>
+                  </div>
+                  <div class="form-group">
+                      <label for="formGroupExampleInput">일교차</label>
+                      <input type="text" name="dcross_input" min="0" class="form-control" id="formGroupExampleInput" placeholder="소수점 첫번째 자리까지 입력하세요."required>
+                  </div>
+                </div>
+                <div class="col-6">
+                  
+                  <!-- Default input -->
+                  <div class="form-group">
+                      <label for="formGroupExampleInput">강수량</label>
+                      <input type="text" name="rain_input" min="0" class="form-control" id="formGroupExampleInput" placeholder="소수점 첫번째 자리까지 입력하세요."required>
+                  </div>
+                  <!-- Default input -->
+                  <div class="form-group">
+                      <label for="formGroupExampleInput">풍속</label>
+                      <input type="text" name="wind_input" min="0" class="form-control" id="formGroupExampleInput" placeholder="소수점 첫번째 자리까지 입력하세요."required>
+                  </div>
+                  <!-- Default input -->
+                  <div class="form-group">
+                      <label for="formGroupExampleInput">습도</label>
+                      <input type="text" name="humi_input" min="0" class="form-control" id="formGroupExampleInput" placeholder="소수점 첫번째 자리까지 입력하세요."required>
+                  </div>
+                  <!-- Default input -->
+                  <div class="form-group">
+                      <label for="formGroupExampleInput">전운량</label>
+                      <input type="text" min="0" name="cloud_input" class="form-control" id="formGroupExampleInput" placeholder="소수점 첫번째 자리까지 입력하세요."required>
+                  </div>
+                  <!-- Default input -->
+                  <div class="form-group">
+                      <label for="formGroupExampleInput">일조시간</label>
+                      <input type="text" name="sunlight_input" min="0" class="form-control" id="formGroupExampleInput" placeholder="소수점 첫번째 자리까지 입력하세요."required>
+                  </div>
+                  <!-- Default input -->
+                  <div class="form-group">
+                      <label for="formGroupExampleInput">일몰시간</label>
+                      <input type="number" name="sunset_input" max = "2400" min="0" class="form-control" id="formGroupExampleInput" placeholder="시간을 입력하세요.  (ex : 19시09분 → 1909)"required>
+                  </div>
+                </div>
+                  </div>
+              <!-- Default form group -->
+             <div class="prediction_btn">
+
+
+           <button  !important; type="submit" class="btn btn-primary btn-md pull-right">예측하기</button>
+         </div>
+
+            </form>
+
+          </div>
+          <!--/Grid column-->
+          <div class="prediction_result_wrap">
+            <h3 class="prediction_result_ttl text-center mb-4">예측 결과</h3>
+            {% if price_value %}
+              <h5 class="prediction_result_cont text-center mt-3">모기 예측 수 : {{ price_value }} <br> {{price}} <br> <img src="{{url_for('static', filename='img/rank.png')}}" class="img-fluid z-depth-1-half"
+              alt="등급별 행동요령"></h5>
+            {% endif %}
+          </div>
+         
+          <!--/Grid column-->
+
+        </div>
+        <!--/Grid row-->
+</div>
+      </section>
+
+        
+
+      </section>
+      <!--Section: More-->
+
+    </div>
+  </main>
+  <!--Main layout-->
+
+  <!--Footer-->
+  <footer class="page-footer text-center font-small mt-4 wow fadeIn">
+    <!--/.Call to action-->
+
+    <hr class="my-4">
+
+    <!--Copyright-->
+    <div class="footer-copyright py-3">
+      © 2020 Copyright:
+      <a href="#" target="_blank"> 황세영, 차예빈, 차형빈, 정철수 </a>
+    </div>
+    <!--/.Copyright-->
+
+  </footer>
+  <!--/.Footer-->
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="{{url_for('static', filename='js/jquery-3.4.1.min.js')}}"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="{{url_for('static', filename='js/popper.min.js')}}"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="{{url_for('static', filename='js/mdb.min.js')}}"></script>
+  <!-- Initializations -->
+  <script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+
+  </script>
+</body>
+
+</html>
