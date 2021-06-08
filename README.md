@@ -47,7 +47,4 @@
 ​
 ​ 
 # 3. 웹 페이지
-![image](https://user-images.githubusercontent.com/82797757/121143012-88fede80-c877-11eb-8400-fff1c50f0ebe.png)
-![image](https://user-images.githubusercontent.com/82797757/121143066-987e2780-c877-11eb-9ad7-2a1fcd321100.png)
-![image](https://user-images.githubusercontent.com/82797757/121143134-ac298e00-c877-11eb-8771-48d61f696849.png)
-
+https://user-images.githubusercontent.com/82797757/121150521-9370a680-c87e-11eb-85e7-00db07817251.MP4
